@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{    
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2em;
+    text-align: center;
+    background-image: url('../images/Portfolio-Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+img.emoji {
+    width: 1em;
+    aspect-ratio: 1/1;
+}
+
+div.container {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    gap: 91px;
+    flex-shrink: 0;
+
+    border-radius: 50px;
+    border: 10px solid rgba(202, 222, 201, 0.50);
+    background: rgba(224, 224, 224, 0.25);
+    backdrop-filter: blur(50px);
+}
+
+div.left, div.right {
+    padding: 5em;
+}
+
+div.left {
+    display: flex;
+    width: 35%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+div.right{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+div.right p {
+    text-align: justify;
+}
+
+div.right ol {
+    display: flex;
+    text-align: justify;
+    gap: 2em;
+}
+
+div.skill-container {
+    display: flex;
+    gap: 1em;
+    width: 100%;
+}
+
+div.skill {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 90deg,
+        var(--progress-color) calc(var(--progress) * 1%),
+        var(--background-color) calc(var(--progress) * 1%)
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+div.skill::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #c6dfc4;
+    border-radius: 50%;
+}
+
+div.skill p {
+    z-index: 99;
+}
+
+div.skill span {
+    position: absolute;
+    font-size: 1em;
+    color: #000;
+}
+
+div.skill.a {
+    --progress: 95;
+    --progress-color: #71BA69;
+    --background-color: #71BA6925;
+}
+
+div.skill.b {
+    --progress: 85;
+    --progress-color: #69BA80;
+    --background-color: #69BA8025;
+}
+
+div.skill.c {
+    --progress: 90;
+    --progress-color: #69BAB5;
+    --background-color: #69BAB525;
+}
+
+img.picture {
+    width: 320px;
+    height: 320px;
+    border-radius: 7em;
+    border: 10px solid #c6dfc422;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+div.name-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+p.name {
+    font-size: 1.8em;
+    font-weight: 800;
+}
+
+p.title {
+    font-size: 1.3em;
+}
+
+div.social-container {
+    display: flex;
+    gap: 1em;
+}
+
+div.social-container i {
+    font-size: 1.5em;
+}
+
+p.skill-name {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+p.skill-percent {
+    font-size: 1em;
+}
+
+div.contacts {
+    font-size: 1.1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1em;
+    text-align: left;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+footer {
+    font-size: 1.1em;
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 1300px) {
+    body {
+        min-height: 100vh;
+        padding: 1em;
+    }
+    div.container {
+        flex-direction: column;
+        width: 100%;
+        gap: 2em;
+        border-radius: 0;
+        border: none;
+        background: none;
+        backdrop-filter: none;
+    }
+    div.left, div.right {
+        padding: 1em;
+        width: 100%;
+    }
+    div.left {
+        align-items: center;
+    }
+    div.right {
+        text-align: center;
+        align-items: center;
+    }
+    div.right p {
+        text-align: center;
+    }
+    div.skill-container {
+        flex-direction: row;
+        align-items: center;
+    }
+    div.skill {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: conic-gradient(
+            from 90deg,
+            var(--progress-color) calc(var(--progress) * 1%),
+            var(--background-color) calc(var(--progress) * 1%)
+        );
+    }
+    img.picture {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    p.name {
+        font-size: 1.5em;
+    }
+    p.title {
+        font-size: 1em;
+    }
+    div.contacts {
+        text-align: center;
+    }
+    footer {
+        font-size: 1em;
+    }
+    ol {
+        flex-direction: column;
+    }
+}

@@ -106,10 +106,44 @@
             MIT licensz
         </p>
     </footer>
+    
+    <button class="accessibility-btn">
+        <i class='bx bxs-cog'></i> Accessibility
+    </button>
+    
+    <div class="accessibility-menu">
+        <button id="high-contrast-toggle">Toggle High Contrast</button>
+        <button id="font-size-increase">Increase Font Size</button>
+        <button id="dyslexic-font-toggle">Dyslexic-Friendly Font</button>
+    </div>
 
     <script src="assets/js/twemoji.min.js" crossorigin="anonymous"></script>
     <script>
         twemoji.parse(document.body);
+    
+        const accessibilityBtn = document.querySelector('.accessibility-btn');
+        const accessibilityMenu = document.querySelector('.accessibility-menu');
+        const highContrastToggle = document.getElementById('high-contrast-toggle');
+        const fontSizeIncrease = document.getElementById('font-size-increase');
+        const dyslexicFontToggle = document.getElementById('dyslexic-font-toggle');
+    
+        accessibilityBtn.addEventListener('click', () => {
+            accessibilityMenu.style.display = accessibilityMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+    
+        highContrastToggle.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast');
+        });
+    
+        fontSizeIncrease.addEventListener('click', () => {
+            document.body.style.fontSize = (parseFloat(window.getComputedStyle(document.body).fontSize) + 2) + 'px';
+        });
+    
+        dyslexicFontToggle.addEventListener('click', () => {
+            document.body.style.fontFamily = document.body.style.fontFamily === 'opendyslexic, sans-serif' 
+                ? "'Montserrat', sans-serif" 
+                : 'opendyslexic, sans-serif';
+        });
     </script>
 </body>
 </html>
